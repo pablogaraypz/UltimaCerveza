@@ -2,27 +2,50 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
-define a = Character('Gonzalo')
-define b = Character('Candela')
+define c = Character("Narrador")
+define b = Character("Candela")
+define a = Character("Gonzalo")
+define d = Character("Camionero")
 
 
 # El juego comienza aquí.
 
 label start:
- 
-    scene bg bares
 
-    "Es tarde luego de una larga noche."
+    # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
+    # defecto. Es posible añadir un archivo en el directorio 'images' con el
+    # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
+
+    scene bg ciudad
+
+    # Muestra un personaje: Se usa un marcador de posición. Es posible
+    # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
+    # 'images'.
+
     
-    "Se siente en el aire, la gente ya saliendo fuera, las conversaciones acallando. Sobre la mesa, varias botellas de cerveza vacías. Un chico llamado Gonzalo está acostado sobre la mesa. Es conocido de la universidad, es quién propuso esta salida en el primer lugar."
-    
-    "Levanta la cabeza al escuchar unos pasos."
 
-
+     
     # Presenta las líneas del diálogo.
+
+    c "Has creado un nuevo juego Ren'Py."
+
+    c "Es tarde luego de una larga noche. Se siente en el aire, la gente ya saliendo fuera, las conversaciones acallando. Sobre la mesa, varias botellas de cerveza vacías. Un chico llamado A está acostado sobre la mesa."
+
+    c "Es conocido de la universidad, es quién propuso esta salida en el primer lugar. Levanta la cabeza al escuchar unos pasos."
+
+    show candela
+
+    b "Malas noticias. Ésta es la última que les quedaba."
+
+    c "Esta es B. Es de otro grado, invitada por A también. No la conocías, pero hablaron mucho a lo largo de la noche. Te da el sentimiento que es más inteligente que tú. Francamente asusta un poco."
+    hide candela
+    show gonzalo
+    a "En serio... Qué triste..."
+    c "Levanta la cabeza al escuchar unos pasos."
+
+    show camionero
+    hide camionero
 
 
 
     # Finaliza el juego:
-
-    return
